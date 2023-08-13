@@ -1,0 +1,20 @@
+[package]
+name = "post-rest-api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = { version = "0.5.0-rc.3", features = ["json"] }
+serde = "1.0"
+serde_json = "1.0"
+tokio = { version = "1", features = ["full"] }
+diesel = { version = "2.1.0", features = ["chrono", "mysql","serde_json"] }
+sqlx = { version = "0.7", features = [ "runtime-tokio" ] }
+dotenvy = "0.15"
+
+[dependencies.rocket_dyn_templates]
+version = "0.1.0-rc.2"
+features = ["handlebars","tera"]
+

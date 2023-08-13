@@ -1,0 +1,15 @@
+-- Your SQL goes here
+-- CREATE TABLE posts (
+-- --   id SERIAL PRIMARY KEY,
+--   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+--   title VARCHAR NOT NULL,
+--   body TEXT NOT NULL,
+--   published BOOLEAN NOT NULL DEFAULT FALSE
+-- )
+
+CREATE TABLE posts (
+  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL, -- Specify a suitable length for VARCHAR
+  body TEXT NOT NULL,
+  published BOOLEAN NOT NULL DEFAULT FALSE
+);
