@@ -17,4 +17,4 @@ port = 9001
 [release]
 port = 9999
 ip_header = false
-secret_key = "hPrYy
+secret_key = "hPrYy"

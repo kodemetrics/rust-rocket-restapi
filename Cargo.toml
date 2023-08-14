@@ -10,11 +10,13 @@ rocket = { version = "0.5.0-rc.3", features = ["json"] }
 serde = "1.0"
 serde_json = "1.0"
 tokio = { version = "1", features = ["full"] }
-diesel = { version = "2.1.0", features = ["chrono", "mysql","serde_json"] }
-sqlx = { version = "0.7", features = [ "runtime-tokio" ] }
-dotenvy = "0.15"
+diesel = { version = "2.1.0", features = ["chrono", "mysql", "serde_json"] }
+#sqlx = { version = "0.7", features = [ "runtime-tokio" ] }
+dotenv = "0.15.0"
+handlebars = "4.3.7"
+validator = { version = "0.16.1", features = ["derive"] }
 
-[dependencies.rocket_dyn_templates]
-version = "0.1.0-rc.2"
-features = ["handlebars","tera"]
 
+# [dependencies.rocket_dyn_templates]
+# version = "0.1.0-rc.2"
+# features = ["handlebars", "tera"]
