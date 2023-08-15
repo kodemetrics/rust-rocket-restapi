@@ -35,24 +35,24 @@ pub fn delete_post(post_id: i32) -> Status {
     Status::Ok
 }
 
-#[get("/<post_id>")]
-pub fn get_post_by_id(post_id: i32) -> Json<Post> {
-    use crate::schema::posts::dsl::*;
-    let connection = &mut database::establish_connection();
+// #[get("/<post_id>")]
+// pub fn get_post_by_id(post_id: i32) -> Json<Post> {
+//     use crate::schema::posts::dsl::*;
+//     let connection = &mut database::establish_connection();
 
-    let result = posts
-        .filter(id.eq(post_id))
-        .load::<Post>(connection)
-        .expect("Error geting Post");
+//     let result = posts
+//         .filter(id.eq(post_id))
+//         .load::<Post>(connection)
+//         .expect("Error geting Post");
 
-       let post = posts
-        .find(post_id)
-        .select(Post::as_select())
-        .first(connection)
-        .optional();
-    //  Json(post)
-    //  Json(result)
-}
+//        let post = posts
+//         .find(post_id)
+//         .select(Post::as_select())
+//         .first(connection)
+//         .optional();
+//     //  Json(post)
+//     //  Json(result)
+// }
 
 #[post("/", data = "<post>")]
 pub fn update_post(post: Json<Post>) -> Json<Post> {
@@ -132,5 +132,3 @@ pub fn index() -> Json<Vec<Post>> {
         .map(Json)
         .expect("Error loading Post")
 }
-
-
