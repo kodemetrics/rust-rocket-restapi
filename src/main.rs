@@ -18,6 +18,7 @@ use diesel::MysqlConnection;
 use dotenv::dotenv;
 use std::env;
 
+mod middleware;
 mod controller;
 mod database;
 mod models;
