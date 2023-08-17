@@ -40,6 +40,7 @@ async fn main() -> Result<(), rocket::Error> {
             ],
         )
         .mount("/api/", routes![controller::validate_post])
+        .attach(middleware::CustomMiddleware) // Attach the middleware from the modul
         .launch()
         .await
         .expect("Failed to launch Rocket");
